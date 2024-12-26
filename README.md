@@ -6,24 +6,14 @@
 
 ## 🚀 Modern E-commerce Platform
 
-A production-ready e-commerce application built with Next.js and React, designed to deliver a seamless and performant shopping experience. Featuring server-side rendering, optimized image loading, and Stripe integration for secure payments.
+An e-commerce application being built with Next.js and React, designed to deliver a seamless shopping experience. This project is being developed as part of the Rocketseat Ignite Program.
 
-## 🏆 Quality Metrics
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Coverage-90%25-brightgreen?style=for-the-badge" alt="Test Coverage">
-  <img src="https://img.shields.io/badge/Lighthouse-95%2B-brightgreen?style=for-the-badge" alt="Lighthouse Score">
-  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge" alt="Build Status">
-</p>
-
-## 🌟 Core Features
+## 🌟 Planned Features
 
 - 🛒 Shopping Cart System
 - 💳 Stripe Payment Integration
 - 🎨 Dynamic Product Catalog
 - 📱 Responsive Design
-- 🌙 Dark Mode Support
-- ⚡ Optimized Performance
 - 🔐 Secure Checkout Flow
 
 ## 🛠 Technology Stack
@@ -43,15 +33,8 @@ A production-ready e-commerce application built with Next.js and React, designed
 ignite-shop/
 ├── src/
 │   ├── components/          # Reusable UI components
-│   │   ├── Cart/
-│   │   ├── ProductCard/
-│   │   └── Layout/
 │   ├── pages/              # Next.js pages
-│   │   ├── api/           # API routes
-│   │   ├── products/      # Product pages
-│   │   └── checkout/      # Checkout flow
 │   ├── styles/            # Global styles and themes
-│   ├── contexts/          # React Context providers
 │   └── utils/             # Helper functions
 ├── public/                # Static assets
 └── package.json
@@ -63,7 +46,6 @@ ignite-shop/
 
 - Node.js 18+
 - npm or yarn
-- Stripe Account (for payment processing)
 
 ### Installation
 
@@ -76,9 +58,6 @@ cd ignite-shop
 
 # Install dependencies
 npm install
-
-# Set up environment variables
-cp .env.example .env.local
 
 # Start development server
 npm run dev
@@ -96,22 +75,15 @@ STRIPE_SECRET_KEY=your-stripe-secret-key
 STRIPE_WEBHOOK_SECRET=your-webhook-secret
 ```
 
-## 📈 Development Milestones
+## 📈 Development Roadmap
 
-### Completed
+### Initial Phase
 
 - [x] Project Setup and Configuration
-- [x] Visual Structure Implementation
-- [x] Stripe Integration
-- [x] Basic Product Display
-- [x] Checkout Flow Implementation
-
-### In Progress
-
-- [ ] Shopping Cart Enhancement
-- [ ] User Experience Improvements
-- [ ] Performance Optimization
-- [ ] Additional Payment Methods
+- [ ] Visual Structure Implementation
+- [ ] Stripe Integration
+- [ ] Basic Product Display
+- [ ] Checkout Flow Implementation
 
 ## 👥 Contributing
 
