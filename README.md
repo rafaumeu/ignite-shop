@@ -8,6 +8,15 @@
 
 An e-commerce application being built with Next.js and React, designed to deliver a seamless shopping experience. This project is being developed as part of the Rocketseat Ignite Program.
 
+## 🎯 Project Motivation
+
+Ignite Shop is more than an e-commerce platform - it's a learning journey through modern web development practices. Built during the Rocketseat Ignite Program, this project aims to:
+
+- 🧠 Master Next.js advanced concepts
+- 💡 Implement best practices in React development
+- 🔧 Build a scalable, production-ready e-commerce solution
+- 📊 Explore state management and complex UI interactions
+
 ## 🌟 Planned Features
 
 - 🛒 Shopping Cart System
@@ -63,23 +72,14 @@ npm install
 npm run dev
 ```
 
-### Environment Configuration
-
-```bash
-# App Configuration
-NEXT_PUBLIC_API_URL=http://localhost:3000
-NEXT_PUBLIC_STRIPE_PUBLIC_KEY=your-stripe-public-key
-
-# Stripe Configuration
-STRIPE_SECRET_KEY=your-stripe-secret-key
-STRIPE_WEBHOOK_SECRET=your-webhook-secret
-```
-
 ## 📈 Development Roadmap
 
 ### Initial Phase
 
 - [x] Project Setup and Configuration
+  - [x] File System Routing Setup
+  - [x] Custom Document Configuration
+  - [x] Font Integration
 - [ ] Visual Structure Implementation
 - [ ] Stripe Integration
 - [ ] Basic Product Display
