@@ -1,21 +1,25 @@
+# Ignite Shop
+
 <p align="center">
   <img src="https://img.shields.io/badge/%F0%9F%9B%8D-Ignite%20Shop-blueviolet?style=for-the-badge" alt="Ignite Shop">
 </p>
 
-# 🛍️ Ignite Shop
+## 🛍️ Overview
 
-## 🚀 Modern E-commerce Platform
+Ignite Shop is a modern e-commerce platform being developed as part of the Rocketseat Ignite Program. This application is built with **Next.js** and **React**, aiming to deliver a seamless shopping experience and provide an in-depth learning journey into modern web development practices.
 
-An e-commerce application being built with Next.js and React, designed to deliver a seamless shopping experience. This project is being developed as part of the Rocketseat Ignite Program.
+---
 
 ## 🎯 Project Motivation
 
-Ignite Shop is more than an e-commerce platform - it's a learning journey through modern web development practices. Built during the Rocketseat Ignite Program, this project aims to:
+Ignite Shop is designed to:
 
-- 🧠 Master Next.js advanced concepts
+- 🧠 Master advanced concepts in Next.js
 - 💡 Implement best practices in React development
 - 🔧 Build a scalable, production-ready e-commerce solution
 - 📊 Explore state management and complex UI interactions
+
+---
 
 ## 🌟 Planned Features
 
@@ -25,29 +29,58 @@ Ignite Shop is more than an e-commerce platform - it's a learning journey throug
 - 📱 Responsive Design
 - 🔐 Secure Checkout Flow
 
-## 🛠 Technology Stack
+---
 
-### Frontend Architecture
+## 🛠️ Technology Stack
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white" alt="Stripe">
+  <img src="https://img.shields.io/badge/Stitches-000000?style=for-the-badge&logo=css3&logoColor=white" alt="Stitches">
+  <img src="https://img.shields.io/badge/Keen%20Slider-FF6B6B?style=for-the-badge" alt="Keen Slider">
 </p>
 
-## 🗂 Project Structure
+---
 
-```
+## 📂 Project Structure
+
+```plaintext
 ignite-shop/
 ├── src/
-│   ├── components/          # Reusable UI components
-│   ├── pages/              # Next.js pages
+│   ├── assets/            # Static assets (images, logos)
+│   ├── components/        # Reusable UI components
+│   ├── pages/             # Next.js pages
+│   │   ├── _app.tsx       # Global app configuration
+│   │   ├── _document.tsx  # Custom document configuration
+│   │   ├── index.tsx      # Home page with product listing
 │   ├── styles/            # Global styles and themes
 │   └── utils/             # Helper functions
-├── public/                # Static assets
-└── package.json
+├── public/                # Public assets
+└── package.json           # Project metadata and dependencies
 ```
+
+---
+
+## 📈 Development Roadmap
+
+### Initial Phase
+
+- [x] Project Setup and Configuration
+  - [x] File System Routing Setup
+  - [x] Custom Document Configuration
+  - [x] Font Integration
+  - [x] Styling with Stitches
+- [x] Visual Structure Implementation
+  - [x] Global Layout
+  - [x] Home Page Design
+  - [x] Product Listing Layout
+  - [x] Product Carousel Integration
+- [ ] Stripe Integration
+- [ ] Basic Product Functionality
+- [ ] Checkout Flow Implementation
+
+---
 
 ## 🚀 Getting Started
 
@@ -72,41 +105,19 @@ npm install
 npm run dev
 ```
 
-## 📈 Development Roadmap
-
-### Initial Phase
-
-- [x] Project Setup and Configuration
-  - [x] File System Routing Setup
-  - [x] Custom Document Configuration
-  - [x] Font Integration
-- [ ] Visual Structure Implementation
-- [ ] Stripe Integration
-- [ ] Basic Product Display
-- [ ] Checkout Flow Implementation
+---
 
 ## 👥 Contributing
 
-Contributions are welcome! Please follow these steps:
+Contributions are welcome! If you'd like to improve Ignite Shop, feel free to fork the repository and submit a pull request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Commit Convention
-
-We follow the Conventional Commits specification:
-
-- `feat:` New features
-- `fix:` Bug fixes
-- `style:` Style updates
-- `docs:` Documentation updates
+---
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the [MIT License](LICENSE).
+
+---
 
 <p align="center">
   <img src="https://github.com/rafaumeu.png" width="100" height="100" style="border-radius: 50%;">
