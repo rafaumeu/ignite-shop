@@ -1,14 +1,11 @@
 import Image from 'next/image'
 import { HomeContainer, Product } from '../styles/pages/home'
-import camiseta1 from '../assets/camisetas/1.png'
-import camiseta2 from '../assets/camisetas/2.png'
-import camiseta3 from '../assets/camisetas/3.png'
-import camiseta4 from '../assets/camisetas/4.png'
-import { useKeenSlider } from 'keen-slider/react'
+
 import 'keen-slider/keen-slider.min.css'
-import { stripe } from '../lib/stripe'
-import { GetServerSideProps } from 'next'
+import { useKeenSlider } from 'keen-slider/react'
+import { GetStaticProps } from 'next'
 import Stripe from 'stripe'
+import { stripe } from '../lib/stripe'
 
 interface HomeProps {
   products: {
@@ -43,7 +40,7 @@ export default function Home({products}: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const response = await stripe.products.list({
     expand: ['data.default_price']
   })
