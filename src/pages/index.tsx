@@ -5,6 +5,7 @@ import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import { GetStaticProps } from 'next'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import Stripe from 'stripe'
 import { stripe } from '../lib/stripe'
 
@@ -17,6 +18,7 @@ interface HomeProps {
   }[]
 }
 export default function Home({products}: HomeProps) {
+  const [isMounted, setIsMounted] = useState(false)
   const [sliderRef] = useKeenSlider(
     {
       slides: {
@@ -24,6 +26,12 @@ export default function Home({products}: HomeProps) {
         spacing: 48
     }}
   );
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  if(!isMounted) {
+    return null
+  }
   return (
   <HomeContainer ref={sliderRef} className="keen-slider">
     {products.map(product => (
