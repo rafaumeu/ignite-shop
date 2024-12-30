@@ -6,7 +6,7 @@
 
 ## 🛍️ Overview
 
-Ignite Shop is a modern e-commerce platform being developed as part of the Rocketseat Ignite Program. This application is built with **Next.js** and **React**, aiming to deliver a seamless shopping experience and provide an in-depth learning journey into modern web development practices.
+Ignite Shop is a modern e-commerce platform developed as part of the Rocketseat Ignite Program. This application is built with **Next.js** and **React**, delivering a seamless shopping experience while implementing modern web development practices and server-side rendering capabilities.
 
 ---
 
@@ -14,20 +14,21 @@ Ignite Shop is a modern e-commerce platform being developed as part of the Rocke
 
 Ignite Shop is designed to:
 
-- 🧠 Master advanced concepts in Next.js
-- 💡 Implement best practices in React development
-- 🔧 Build a scalable, production-ready e-commerce solution
-- 📊 Explore state management and complex UI interactions
+- 🧠 Master advanced concepts in Next.js, including Static Site Generation (SSG) and Server-Side Rendering (SSR)
+- 💡 Implement best practices in React development with TypeScript
+- 🔧 Build a scalable, production-ready e-commerce solution integrated with Stripe
+- 📊 Explore state management and complex UI interactions with modern tools
 
 ---
 
-## 🌟 Planned Features
+## 🌟 Current Features
 
-- 🛒 Shopping Cart System
-- 💳 Stripe Payment Integration
-- 🎨 Dynamic Product Catalog
-- 📱 Responsive Design
-- 🔐 Secure Checkout Flow
+- 🎨 Dynamic Product Catalog with Keen Slider integration
+- 🖼️ Optimized image loading with Next.js Image component
+- 💳 Stripe Integration for product management
+- 📱 Responsive Design with Stitches
+- 🎯 Incremental Static Regeneration (ISR) for product pages
+- 💰 Currency formatting and price display optimization
 
 ---
 
@@ -39,6 +40,7 @@ Ignite Shop is designed to:
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/Stitches-000000?style=for-the-badge&logo=css3&logoColor=white" alt="Stitches">
   <img src="https://img.shields.io/badge/Keen%20Slider-FF6B6B?style=for-the-badge" alt="Keen Slider">
+  <img src="https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white" alt="Stripe">
 </p>
 
 ---
@@ -54,17 +56,19 @@ ignite-shop/
 │   │   ├── _app.tsx       # Global app configuration
 │   │   ├── _document.tsx  # Custom document configuration
 │   │   ├── index.tsx      # Home page with product listing
+│   │   ├── product/       # Product pages with SSG
+│   │   └── success.tsx    # Checkout success page
 │   ├── styles/            # Global styles and themes
-│   └── utils/             # Helper functions
+│   └── utils/            # Helper functions
 ├── public/                # Public assets
-└── package.json           # Project metadata and dependencies
+└── package.json          # Project metadata and dependencies
 ```
 
 ---
 
-## 📈 Development Roadmap
+## 📈 Development Progress
 
-### Initial Phase
+### Completed Features
 
 - [x] Project Setup and Configuration
   - [x] File System Routing Setup
@@ -75,10 +79,24 @@ ignite-shop/
   - [x] Global Layout
   - [x] Home Page Design
   - [x] Product Listing Layout
-  - [x] Product Carousel Integration
-- [ ] Stripe Integration
-- [ ] Basic Product Functionality
-- [ ] Checkout Flow Implementation
+  - [x] Product Carousel with Keen Slider
+- [x] Stripe Integration
+  - [x] Product Registration
+  - [x] Image Domain Configuration
+  - [x] Server-side Product Fetching
+  - [x] Static Generation
+    - [x] ISR Implementation
+    - [x] Currency Formatting
+    - [x] Product Page Optimization
+- [ ] Product & Checkout
+
+### Next Steps
+
+- [ ] Shopping Cart Implementation
+- [ ] Checkout Flow Integration
+- [ ] Success Page Development
+- [ ] User Authentication
+- [ ] Order History
 
 ---
 
@@ -88,6 +106,7 @@ ignite-shop/
 
 - Node.js 18+
 - npm or yarn
+- Stripe Account for API integration
 
 ### Installation
 
@@ -100,6 +119,10 @@ cd ignite-shop
 
 # Install dependencies
 npm install
+
+# Configure environment variables
+cp .env.example .env.local
+# Add your Stripe API keys to .env.local
 
 # Start development server
 npm run dev
