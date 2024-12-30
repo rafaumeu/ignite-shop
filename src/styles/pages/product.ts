@@ -56,6 +56,7 @@ export const ProductDetails = styled('div', {
     color: '$gray100',
     fontWeight: 'bold',
     fontSize: '$md',
+    cursor: 'pointer',
     '&:hover': {
       background: '$green300',
     }
