@@ -5,6 +5,7 @@ import { Container, Header, CartButton, CartItemCount } from '../styles/pages/ap
 import Image from 'next/image'
 import { CartProvider, useCart } from '../contexts/CartContext'
 import { CartSidebar } from '../components/CartSidebar'
+import { Analytics } from '@vercel/analytics/react'
 
 globalStyles()
 
@@ -58,6 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Container>
       <CartSidebar />
+      <Analytics />
     </CartProvider>
   )
 }
