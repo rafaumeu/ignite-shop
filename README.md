@@ -6,40 +6,29 @@
 
 ## 🛍️ Overview
 
-Ignite Shop is a modern e-commerce platform developed as part of the Rocketseat Ignite Program. This application is built with **Next.js** and **React**, delivering a seamless shopping experience while implementing modern web development practices and server-side rendering capabilities.
+Ignite Shop is a modern e-commerce application for buying developer t-shirts, built as part of the [Rocketseat Ignite Program](https://www.rocketseat.com.br/). It features a full shopping cart experience with Stripe-powered checkout.
 
 ---
 
-## 🎯 Project Motivation
+## 🌟 Features
 
-Ignite Shop is designed to:
-
-- 🧠 Master advanced concepts in Next.js, including Static Site Generation (SSG) and Server-Side Rendering (SSR)
-- 💡 Implement best practices in React development with TypeScript
-- 🔧 Build a scalable, production-ready e-commerce solution integrated with Stripe
-- 📊 Explore state management and complex UI interactions with modern tools
-
----
-
-## 🌟 Current Features
-
-- 🎨 Dynamic Product Catalog with Keen Slider integration
-- 🖼️ Optimized image loading with Next.js Image component
-- 💳 Stripe Integration for product management
-- 📱 Responsive Design with Stitches
-- 🎯 Incremental Static Regeneration (ISR) for product pages
-- 💰 Currency formatting and price display optimization
+- **Product Catalog** — Horizontal carousel powered by Keen Slider
+- **Product Detail Pages** — SSG with ISR for blazing-fast load times
+- **Shopping Cart** — Slide-in sidebar with quantity controls and real-time totals
+- **Stripe Checkout** — Secure multi-item payment via Stripe Checkout Sessions
+- **Success Page** — Order confirmation with product details from Stripe
+- **Responsive Design** — Stitches CSS-in-JS with a custom dark theme
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
+  <img src="https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/React_19-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React">
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/Stitches-000000?style=for-the-badge&logo=css3&logoColor=white" alt="Stitches">
-  <img src="https://img.shields.io/badge/Keen%20Slider-FF6B6B?style=for-the-badge" alt="Keen Slider">
+  <img src="https://img.shields.io/badge/Keen_Slider-FF6B6B?style=for-the-badge" alt="Keen Slider">
   <img src="https://img.shields.io/badge/Stripe-008CDD?style=for-the-badge&logo=stripe&logoColor=white" alt="Stripe">
 </p>
 
@@ -47,56 +36,34 @@ Ignite Shop is designed to:
 
 ## 📂 Project Structure
 
-```plaintext
+```
 ignite-shop/
 ├── src/
-│   ├── assets/            # Static assets (images, logos)
-│   ├── components/        # Reusable UI components
-│   ├── pages/             # Next.js pages
-│   │   ├── _app.tsx       # Global app configuration
-│   │   ├── _document.tsx  # Custom document configuration
-│   │   ├── index.tsx      # Home page with product listing
-│   │   ├── product/       # Product pages with SSG
-│   │   └── success.tsx    # Checkout success page
-│   ├── styles/            # Global styles and themes
-│   └── utils/            # Helper functions
-├── public/                # Public assets
-└── package.json          # Project metadata and dependencies
+│   ├── assets/              # Static assets (logo SVG)
+│   ├── components/          # UI components
+│   │   └── CartSidebar.tsx  # Shopping cart slide-in drawer
+│   ├── contexts/            # React contexts
+│   │   └── CartContext.tsx  # Cart state management
+│   ├── lib/                 # Library configuration
+│   │   └── stripe.ts       # Stripe server client
+│   ├── pages/               # Next.js Pages Router
+│   │   ├── api/
+│   │   │   └── checkout.ts  # Stripe Checkout Session API
+│   │   ├── product/
+│   │   │   └── [id].tsx     # Product detail (SSG + ISR)
+│   │   ├── _app.tsx         # App shell with cart provider
+│   │   ├── _document.tsx    # Custom document (Stitches SSR)
+│   │   ├── index.tsx        # Home — product carousel
+│   │   └── success.tsx      # Checkout success (SSR)
+│   └── styles/              # Stitches design system
+│       ├── components/      # Component styles (cart sidebar)
+│       ├── pages/           # Page-level styles
+│       ├── global.ts        # Global CSS reset
+│       └── index.ts         # Stitches theme config
+├── .env.example
+├── next.config.mjs
+└── package.json
 ```
-
----
-
-## 📈 Development Progress
-
-### Completed Features
-
-- [x] Project Setup and Configuration
-  - [x] File System Routing Setup
-  - [x] Custom Document Configuration
-  - [x] Font Integration
-  - [x] Styling with Stitches
-- [x] Visual Structure Implementation
-  - [x] Global Layout
-  - [x] Home Page Design
-  - [x] Product Listing Layout
-  - [x] Product Carousel with Keen Slider
-- [x] Stripe Integration
-  - [x] Product Registration
-  - [x] Image Domain Configuration
-  - [x] Server-side Product Fetching
-  - [x] Static Generation
-    - [x] ISR Implementation
-    - [x] Currency Formatting
-    - [x] Product Page Optimization
-- [ ] Product & Checkout
-
-### Next Steps
-
-- [ ] Shopping Cart Implementation
-- [ ] Checkout Flow Integration
-- [ ] Success Page Development
-- [ ] User Authentication
-- [ ] Order History
 
 ---
 
@@ -105,34 +72,45 @@ ignite-shop/
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
-- Stripe Account for API integration
+- pnpm (or npm/yarn)
+- [Stripe account](https://stripe.com) with products configured
 
 ### Installation
 
 ```bash
 # Clone repository
 git clone https://github.com/rafaumeu/ignite-shop.git
-
-# Navigate to project
 cd ignite-shop
 
 # Install dependencies
-npm install
+pnpm install
 
 # Configure environment variables
 cp .env.example .env.local
-# Add your Stripe API keys to .env.local
+# Edit .env.local with your Stripe keys and app URL
 
 # Start development server
-npm run dev
+pnpm dev
 ```
+
+### Environment Variables
+
+Create a `.env.local` file based on `.env.example`:
+
+| Variable              | Description                          | Example                      |
+|-----------------------|--------------------------------------|------------------------------|
+| `STRIPE_SECRET_KEY`   | Stripe secret API key                | `sk_test_...`                |
+| `NEXT_URL`            | App base URL for Stripe redirects    | `http://localhost:3000`      |
 
 ---
 
-## 👥 Contributing
+## 🔧 How It Works
 
-Contributions are welcome! If you'd like to improve Ignite Shop, feel free to fork the repository and submit a pull request.
+1. **Home Page** — Fetches products from Stripe at build time (ISR every 2h) and renders them in a Keen Slider carousel
+2. **Product Page** — Statically generated per product. "Colocar na sacola" button adds items to the React Context cart
+3. **Cart Sidebar** — Slide-in drawer showing items with quantity controls. "Finalizar compra" creates a Stripe Checkout Session via the API route
+4. **Stripe Checkout** — Handles payment securely on Stripe's hosted page
+5. **Success Page** — Server-rendered confirmation pulling order details from the Stripe session
 
 ---
 
@@ -143,14 +121,5 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 <p align="center">
-  <img src="https://github.com/rafaumeu.png" width="100" height="100" style="border-radius: 50%;">
-</p>
-<h3 align="center">🚀 Built with ❤️ during Rocketseat's Ignite Program</h3>
-<p align="center">
-  <a href="https://www.linkedin.com/in/rafael-dias-zendron-528290132/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
-  <a href="https://github.com/rafaumeu/ignite-shop">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  </a>
+  🚀 Built with ❤️ during Rocketseat's Ignite Program
 </p>
