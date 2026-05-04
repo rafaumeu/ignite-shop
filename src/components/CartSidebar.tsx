@@ -31,6 +31,7 @@ export function CartSidebar() {
     items,
     removeFromCart,
     changeItemQuantity,
+    clearCart,
     totalItems,
     totalPrice,
     isCartOpen,
@@ -48,6 +49,7 @@ export function CartSidebar() {
       }))
       const response = await axios.post('/api/checkout', { items: lineItems })
       const { checkoutUrl } = response.data
+      clearCart()
       window.location.href = checkoutUrl
     } catch {
       setIsCreatingCheckout(false)

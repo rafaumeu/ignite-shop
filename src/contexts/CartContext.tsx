@@ -1,4 +1,13 @@
-import { createContext, useContext, useState, useCallback, ReactNode } from 'react'
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  ReactNode,
+  useEffect,
+} from 'react'
+
+const CART_STORAGE_KEY = 'ignite-shop:cart'
 
 export interface CartItem {
   id: string
@@ -24,9 +33,46 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType>({} as CartContextType)
 
+function loadCartFromStorage(): CartItem[] {
+  if (typeof window === 'undefined') return []
+  try {
+    const stored = localStorage.getItem(CART_STORAGE_KEY)
+    if (stored) {
+      const parsed = JSON.parse(stored)
+      if (Array.isArray(parsed)) return parsed
+    }
+  } catch {
+    // ignore corrupt data
+  }
+  return []
+}
+
+function saveCartToStorage(items: CartItem[]) {
+  if (typeof window === 'undefined') return
+  try {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items))
+  } catch {
+    // ignore quota errors
+  }
+}
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
+  const [hydrated, setHydrated] = useState(false)
   const [isCartOpen, setIsCartOpen] = useState(false)
+
+  // Hydrate cart from localStorage on mount
+  useEffect(() => {
+    setItems(loadCartFromStorage())
+    setHydrated(true)
+  }, [])
+
+  // Persist cart to localStorage whenever items change (after hydration)
+  useEffect(() => {
+    if (hydrated) {
+      saveCartToStorage(items)
+    }
+  }, [items, hydrated])
 
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0)
   const totalPrice = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
