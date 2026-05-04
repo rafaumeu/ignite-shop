@@ -1,3 +1,7 @@
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=FF0080&height=180&section=header&text=Ignite%20Shop&fontSize=42&fontColor=fff&animation=fadeIn&fontAlignY=35&desc=E-commerce%20with%20Stripe%20Payments&descSize=18&descAlignY=52"/>
+</div>
+
 # Ignite Shop
 
 <p align="center">
@@ -123,3 +127,8 @@ This project is licensed under the [MIT License](LICENSE).
 <p align="center">
   🚀 Built with ❤️ during Rocketseat's Ignite Program
 </p>
+
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=FF0080&height=100&section=footer"/>
+  <br/><sub>Built with ❤️ by <a href="https://github.com/rafaumeu">Rafael Zendron</a></sub>
+</div>
